@@ -72,8 +72,8 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
             </div>
           </div>
           <div id="invoice-amount-error" aria-live="polite" aria-atomic="true">
-            {state.errors?.customerId &&
-              state.errors.customerId.map((error: string) => (
+            {state.errors?.amount &&
+              state.errors.amount.map((error: string) => (
                 <p className="mt-2 text-sm text-red-500" key={error}>
                   {error}
                 </p>
@@ -82,7 +82,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         </div>
 
         {/* Invoice Status */}
-        <fieldset>
+        <fieldset aria-describedby="invoice-status-error">
           <legend className="mb-2 block text-sm font-medium">
             Set the invoice status
           </legend>
@@ -122,8 +122,8 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
           </div>
         </fieldset>
         <div id="invoice-status-error" aria-live="polite" aria-atomic="true">
-          {state.errors?.customerId &&
-            state.errors.customerId.map((error: string) => (
+          {state.errors?.status &&
+            state.errors.status.map((error: string) => (
               <p className="mt-2 text-sm text-red-500" key={error}>
                 {error}
               </p>
